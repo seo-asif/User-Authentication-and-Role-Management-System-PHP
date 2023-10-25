@@ -75,9 +75,9 @@ foreach ($allUsers as $user) {
         <?php else: ?>
             <td><?php echo $user["role"]; ?></td>
         <?php endif;
-    echo "<td> button</td>";
-    // echo "<td><a href='/admin/edit.php?id={$value[3]}' class='btn btn-sm btn-outline-primary mr-2'>Edit</a><a href='/admin/delete.php?id={$value[3]}' class='btn btn-sm btn-outline-danger'>Delete</a></td>
-    //                     </tr>";
+
+    echo "<td><a href='edit.php?id={$user['username']}' class='btn btn-sm btn-outline-primary mr-2'>Edit</a><a href='delete.php?id={$user['username']}' class='btn btn-sm btn-outline-danger'>Delete</a></td>
+                        </tr>";
 }
 ?>
 

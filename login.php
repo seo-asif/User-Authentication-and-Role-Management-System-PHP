@@ -1,54 +1,5 @@
 <?php
-session_start();
-if (isset($_SESSION["email"])) {
-    header("location: /index.php");
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["email"]) && isset($_POST["password"])) {
-        $email = trim($_POST["email"]) ?? "";
-        $password = sha1(trim($_POST["password"])) ?? "";
-        $emailErrorMassage = "";
-        $passwordErrorMassage = "";
-        $errorMassage = "";
-
-        if (empty($email)) {
-            $emailErrorMassage = "email required";
-        }
-        if (empty($password)) {
-            $passwordErrorMassage = "password required";
-        }
-
-        $filename = "userdata.txt";
-        if (file_exists($filename)) {
-
-            $readFromFile = file_get_contents($filename);
-            $allUsers = json_decode($readFromFile, true);
-            $isFound = false;
-            foreach ($allUsers as $user) {
-
-                if ($user["email"] == $email && $user["password"] == $password) {
-                    $isFound = true;
-                    $_SESSION["loggedin"] = true;
-                    $_SESSION["email"] = $user["email"];
-                    $_SESSION["role"] = $user["role"];
-                    $_SESSION["username"] = $user["username"];
-
-                    header("location: /index.php");
-                    break;
-                } else {
-                    $_SESSION["loggedin"] = false;
-                    $emailErrorMassage = "";
-                    $passwordErrorMassage = "email and password does not match";
-
-                }
-            }
-
-        } else {
-
-            $_SESSION["loggedin"] = false;
-        }
-    }
-}
+require_once "./helper_php/login_post.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,11 +32,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </p>
   </div>
 
-  <button type="submit" class="btn btn-primary mt-2">Login</button>
+  <button type="submit" class="btn btn-primary my-2">Login</button>
 
   <p>Don't have account?<a style="color:yellow" class="pl-1" href="/registration.php">Registration</a></p>
 </form>
+        <div class="card " style="background: #00000014;">
+        <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <th> Email</th>
+                        <th> Password</th>
+                        <th> Role</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                            <td scope="col">admin@gmail.com</td>
+                            <td scope="col">admin123456</td>
+                            <td scope="col">admin</td>
 
+                        </tr>
+                        <tr>
+                            <td scope="col">rayhan@gmail.com</td>
+                            <td scope="col">123456</td>
+                            <td scope="col">User</td>
+
+                        </tr>
+                    </tbody>
+                    </table>
+        </div>
     </div>
 
 

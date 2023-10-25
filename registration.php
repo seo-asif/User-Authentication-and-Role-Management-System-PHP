@@ -36,7 +36,7 @@ require_once "./helper_php/registration_post.php";
   </p>
   </div>
 
-  <button type="submit" class="btn btn-primary mt-2">Registration</button>
+  <button type="submit" class="btn btn-primary my-2">Registration</button>
 
   <p>Already have account?<a style="color:yellow" class="pl-1" href="/login.php">login</a></p>
 </form>
