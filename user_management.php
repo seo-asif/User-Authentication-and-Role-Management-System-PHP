@@ -35,7 +35,7 @@ $allUsers = json_decode($readData, true);
         <div class="card my-5 p-2" style="
     background: #f1f1f1;
 ">
-            <h2><?php echo $_SESSION["username"]; ?>'s only access this page</h2>
+            <h2><?php echo $_SESSION["username"]; ?>'s only access</h2>
             <div class="d-flex align-items-center justify-content-end  ">
                 <a href="index.php" class="btn btn-info mr-2" role="button">back to Dashboard</a>
                 <a href="logout.php" class="btn btn-warning ">Logout</a>
