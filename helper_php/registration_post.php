@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if ($_SESSION["role"] == "admin") {
+if (isset($_SESSION["email"])) {
     header("location: /index.php");
 }
 
