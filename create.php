@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 <body style="background:#008080;">
     <div class="container d-flex flex-column align-items-center justify-content-center w-50" style="height:100vh">
-    <h1 class="font-weight-bold mb-5 ">Create User</h1>
+    <h1 class="font-weight-bold mb-5 ">Create User By Admin</h1>
     <form action="" method="POST" class="w-100">
 
   <div class="form-group">
