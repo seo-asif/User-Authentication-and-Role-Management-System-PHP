@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 if (!isset($_SESSION["email"])) {
     header("location: /login.php");
 } else if ($_SESSION["role"] == "user" || $_SESSION["role"] == "") {
@@ -45,7 +46,7 @@ if (isset($_GET['id'])) {
 <body>
 <body style="background:#008080;">
     <div class="container d-flex flex-column align-items-center justify-content-center w-50" style="height:100vh">
-    <h1 class="font-weight-bold mb-5 ">Update User Form</h1>
+    <h1 class="font-weight-bold mb-5 ">Update User Role</h1>
     <form action="" method="POST" class="w-100">
 
   <div class="form-group">
@@ -71,6 +72,7 @@ if (isset($_GET['id'])) {
 
 
   <button type="submit" class="btn btn-primary my-2">Update User</button>
+  <a href="user_management.php" class="btn btn-warning ml-2" role="button">back</a>
 
 </form>
 

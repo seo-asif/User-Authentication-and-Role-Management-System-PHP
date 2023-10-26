@@ -1,4 +1,16 @@
 <?php
+
+session_start();
+if (isset($_SESSION["email"])) {
+    header("location: /index.php");
+} else if ($_SESSION["role"] == "user" || $_SESSION["role"] == "") {
+    header("location: /user_page.php");
+} else if ($_SESSION["role"] == "manager") {
+    header("location: /managerpage.php");
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST["username"]) ?? "";
     $email = trim($_POST["email"]) ?? "";

@@ -50,11 +50,11 @@ $allUsers = json_decode($readData, true);
                 <table class="table table-bordered">
                     <div class="d-flex align-items-center justify-content-between pb-3">
                         <h4>All Users</h4>
-                        <a href="./admin/create.php" class="btn bg-primary text-white ">Create user</a>
+                        <a href="/create.php" class="btn bg-primary text-white ">Create user</a>
                     </div>
 
                     <thead>
-                        <tr>
+                        <tr style="background:#b2d5df">
                             <th scope="col">username</th>
                             <th scope="col">email</th>
                             <th scope="col">role</th>
